@@ -114,13 +114,13 @@ async function addTable(table_name, columns){
     }
     sql += `) VALUES (${sql_val})`
     
-    console.log(response);
 
     db.query(sql, vals, function (err, results) {
         if(err){
             console.log(err);
+        } else {
+            console.log(`Added to ${table_name}`);
         }
-        console.log(results);
     });
     
 }
